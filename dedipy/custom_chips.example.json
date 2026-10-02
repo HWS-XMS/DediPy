@@ -1,0 +1,37 @@
+[
+  {
+    "_comment": "Custom chip definition. Copy an existing chip's init sequence from em100pro_chips.json and modify as needed.",
+    "_registers": {
+      "0x32": "Always 0xFFFF",
+      "0x3a": "Chip size: (value + 1) * 64KB. E.g. 0x000F = 1MB, 0x001F = 2MB, 0x003F = 4MB, 0x007F = 8MB",
+      "0x38": "Chip config (timing/mode)",
+      "0x40": "Device ID bytes",
+      "0x42": "Vendor ID / Device ID high",
+      "0x44": "Always 0x0318",
+      "0x46": "Chip config parameter",
+      "0x48": "Chip config parameter"
+    },
+    "_voltages": {
+      "ch2 (REF+)":  "Reference voltage in mV",
+      "ch3 (REF-)":  "Reference voltage in mV",
+      "ch4 (Buffer VCC)": "Special codes: 1800=1.8V, 2500=2.5V, 3300=3.3V"
+    },
+
+    "vendor": "Custom",
+    "name": "MY_FLASH_8MB",
+    "size": 8388608,
+    "init": [
+      [35, 50, 255, 255],
+      [35, 58,   0, 127],
+      [35, 56, 134, 100],
+      [35, 64,  20,  19],
+      [35, 66,  32,  32],
+      [35, 68,   3,  24],
+      [35, 70,  26,  48],
+      [35, 72,  25, 192],
+      [17,  2,  11,  63],
+      [17,  3,   7,   8],
+      [17,  4,  12, 228]
+    ]
+  }
+]

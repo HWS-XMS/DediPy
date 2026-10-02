@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dedipy"
+version = "1.0.0"
+description = "Pure-Python driver and CLI for the Dediprog EM100Pro SPI flash emulator"
+requires-python = ">=3.8"
+dependencies = ["pyusb"]
+
+[project.scripts]
+em100 = "dedipy.em100:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["dedipy"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"dedipy/em100pro_chips.json" = "dedipy/em100pro_chips.json"
+"dedipy/custom_chips.example.json" = "dedipy/custom_chips.example.json"

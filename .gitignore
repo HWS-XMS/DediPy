@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+.env
+custom_chips.json
+dist/
+*.egg-info
+campaigns/
+captures/
